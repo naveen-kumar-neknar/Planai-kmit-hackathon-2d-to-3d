@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+pydantic
+python-multipart
+sqlalchemy
+alembic
+opencv-python
+pytesseract
+numpy
+shapely
+networkx
+trimesh
+rtree
+Pillow
+reportlab
+pdf2image
+ezdxf

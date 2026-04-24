@@ -1,0 +1,189 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+@import "./styles/theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+/* @layer base {
+  :root {
+     Neon Futuristic Theme - Deep Space Background 
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 13%;
+    --popover-foreground: 210 40% 98%;
+
+    Electric Violet Primary 
+    --primary: 258 84% 61%;
+    --primary-foreground: 210 40% 98%;
+    
+     Cyan Glow Secondary 
+    --secondary: 187 78% 50%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 222 47% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    Neon Pink Accent 
+    --accent: 330 81% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 258 84% 61% / 0.2;
+    --input: 258 84% 61% / 0.15;
+    --ring: 258 84% 61%;
+
+    --radius: 1rem;
+
+    Custom gradients 
+    --gradient-primary: linear-gradient(135deg, hsl(330 81% 60%), hsl(258 84% 61%), hsl(187 78% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(258 84% 61%) 0%, hsl(187 78% 50%) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(258 84% 61% / 0.3), transparent 70%);
+    
+    Shadows & Effects 
+    --shadow-neon: 0 0 30px hsl(258 84% 61% / 0.5), 0 0 60px hsl(258 84% 61% / 0.3);
+    --shadow-cyan: 0 0 30px hsl(187 78% 50% / 0.5), 0 0 60px hsl(187 78% 50% / 0.3);
+    --shadow-pink: 0 0 30px hsl(330 81% 60% / 0.5), 0 0 60px hsl(330 81% 60% / 0.3);
+    
+    Glass effect 
+    --glass-bg: hsl(222 47% 15% / 0.4);
+    --glass-border: hsl(258 84% 61% / 0.3);
+    
+    Transitions 
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 222 47% 13%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 258 84% 61%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 258 84% 61% / 0.2;
+    --sidebar-ring: 258 84% 61%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+  }
+  
+  Custom scrollbar 
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, hsl(258 84% 61%), hsl(187 78% 50%));
+    @apply rounded-full;
+  }
+}
+
+@layer components {
+  Glass morphism effect 
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+  
+  Neon glow text 
+  .text-neon {
+    text-shadow: 0 0 20px hsl(258 84% 61% / 0.8),
+                 0 0 40px hsl(258 84% 61% / 0.5);
+  }
+  
+   Hover scale animation 
+  .hover-scale {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  Magnetic button effect 
+  .btn-magnetic {
+    transition: var(--transition-bounce);
+  }
+  
+  .btn-magnetic:hover {
+    transform: translateY(-3px);
+  }
+  
+  Gradient border animation
+  @keyframes gradient-rotate {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .gradient-border {
+    background: linear-gradient(135deg, hsl(330 81% 60%), hsl(258 84% 61%), hsl(187 78% 50%));
+    background-size: 200% 200%;
+    animation: gradient-rotate 3s ease infinite;
+  }
+  
+   Floating animation 
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  Pulse glow 
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(258 84% 61% / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(258 84% 61% / 0.8), 0 0 60px hsl(258 84% 61% / 0.5);
+    }
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
+ */
